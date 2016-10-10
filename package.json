@@ -1,0 +1,54 @@
+{
+  "name": "saitonakamura-react-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "npm run clean && webpack",
+    "clean": "rimraf build/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saitonakamura/saitonakamura-react-boilerplate.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Saito Nakamura",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saitonakamura/saitonakamura-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/saitonakamura/saitonakamura-react-boilerplate#readme",
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.8.1",
+    "react-router-redux": "^4.0.6",
+    "redux": "^3.6.0",
+    "redux-form": "^6.1.0",
+    "redux-thunk": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "cross-env": "^3.1.2",
+    "eslint": "^3.7.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^2.0.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.22.0",
+    "rimraf": "^2.5.4",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
