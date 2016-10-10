@@ -34,4 +34,5 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],
+  devtool: 'source-map',
 }

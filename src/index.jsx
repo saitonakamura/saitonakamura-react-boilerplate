@@ -12,7 +12,7 @@ render(
 )
 
 if (module.hot) {
-  module.got.accept('./containers/Root', () => {
+  module.hot.accept('./containers/Root', () => {
     const NextRoot = require('./containers/Root').default // eslint-disable-line global-require
     render(
       <NextRoot store={store} />,
