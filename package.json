@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "build": "npm run clean && webpack",
-    "clean": "rimraf build/*"
+    "clean": "rimraf build/*",
+    "lint": "eslint src/**"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "react-router-redux": "^4.0.6",
     "redux": "^3.6.0",
     "redux-form": "^6.1.0",
+    "redux-logger": "^2.7.0",
     "redux-thunk": "^2.1.0"
   },
   "devDependencies": {

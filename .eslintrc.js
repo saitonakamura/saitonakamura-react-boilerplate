@@ -7,6 +7,8 @@ module.exports = {
     ],
     "rules": {
       "linebreak-style": ["error", "windows"],
+      "semi": ["error", "never"],
+      "react/forbid-prop-types": ["warn"],
     },
     "env": {
       "browser": true
