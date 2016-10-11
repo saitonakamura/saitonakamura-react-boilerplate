@@ -1,25 +1,23 @@
-var path = require('path')
-var webpack = require('webpack')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-// var ExtractTextPlugin = require("extract-text-webpack-plugin")
+const path = require('path')
+const Webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const Config = require('webpack-config').default
 
-module.exports = {
+module.exports = new Config().merge({
   entry: [
-    'webpack-dev-server/client?http://0.0.0.0:3000', // WebpackDevServer host and port
-    'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
-    'react-hot-loader/patch',
     './src/index',
   ],
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.resolve('./build'),
     filename: 'bundle.js',
   },
   resolve: {
     extensions: ['', '.css', '.js', '.jsx'],
+    root: [path.resolve('./src')],
   },
   module: {
     loaders: [
-      { test: /\.jsx?$/, loaders: ['babel'], include: path.resolve(__dirname, 'src'), },
+      { test: /\.jsx?$/, loaders: ['babel'], include: path.resolve('./src'), },
       { test: /\.css$/, loaders: ['style', 'css'], },
       { test: /\.(png|jpg)$/, loader: 'file?name=images/[name].[hash].[ext]' },
       { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=fonts/[name].[hash].[ext]&mimetype=application/font-woff'},
@@ -31,8 +29,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ template: 'index.html.ejs', }),
-    new webpack.NoErrorsPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
+    new Webpack.DefinePlugin({
+  			'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+		}),
   ],
-  devtool: 'source-map',
-}
+})

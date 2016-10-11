@@ -2,10 +2,11 @@
   "name": "saitonakamura-react-boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "npm run clean && webpack",
+    "start": "cross-env NODE_ENV=development node --harmony server.js",
+    "build": "npm run clean && cross-env NODE_ENV=development webpack",
+    "build:prod": "npm run clean && cross-env NODE_ENV=production webpack",
     "clean": "rimraf build/*",
     "lint": "eslint src/**"
   },
@@ -43,7 +44,7 @@
     "cross-env": "^3.1.2",
     "eslint": "^3.7.1",
     "eslint-config-airbnb": "^12.0.0",
-    "eslint-plugin-import": "^2.0.0",
+    "eslint-plugin-import": "^2.0.1",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.0",
     "extract-text-webpack-plugin": "^1.0.1",
@@ -52,6 +53,7 @@
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
+    "webpack-config": "^6.1.3",
     "webpack-dev-server": "^1.16.2"
   }
 }
