@@ -6,4 +6,6 @@
 * redux
 * webpack
 * react-router
+* normalizr
+* denormalizr
 * hot module replacement
