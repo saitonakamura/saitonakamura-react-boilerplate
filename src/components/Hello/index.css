@@ -1,0 +1,12 @@
+.base {
+  font-family: Helvetica;
+}
+
+.hello {
+  composes: base;
+  background-color: #123456;
+}
+
+.hello:hover {
+  background-color: #654321;
+}

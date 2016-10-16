@@ -12,13 +12,12 @@ module.exports = new Config().merge({
     filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['', '.css', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx'],
     root: [path.resolve('./src')],
   },
   module: {
     loaders: [
       { test: /\.jsx?$/, loaders: ['babel'], include: path.resolve('./src'), },
-      { test: /\.css$/, loaders: ['style', 'css'], },
       { test: /\.(png|jpg)$/, loader: 'file?name=images/[name].[hash].[ext]' },
       { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=fonts/[name].[hash].[ext]&mimetype=application/font-woff'},
       { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,loader: 'file?name=fonts/[name].[hash].[ext]&mimetype=application/font-woff'},
