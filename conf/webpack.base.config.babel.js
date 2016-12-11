@@ -29,7 +29,9 @@ module.exports = new Config().merge({
   plugins: [
     new HtmlWebpackPlugin({ template: 'index.html.ejs', }),
     new Webpack.DefinePlugin({
-  			'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-		}),
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      }
+    }),
   ],
 })
