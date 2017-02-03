@@ -13,8 +13,8 @@ export default function configureStore() {
     initialState,
     compose(
       applyMiddleware(thunkMiddleware, createLogger(), routerMiddleware(browserHistory)),
-      window.devToolsExtension ? window.devToolsExtension() : f => f
-    )
+      window.devToolsExtension ? window.devToolsExtension() : f => f,
+    ),
   )
 
   if (module.hot) {

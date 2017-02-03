@@ -1,4 +1,3 @@
-import 'react-hot-loader/patch'
 import React from 'react'
 import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
@@ -15,7 +14,7 @@ render(
   <AppContainer>
     <Root store={store} history={history} />
   </AppContainer>,
-  rootElement
+  rootElement,
 )
 
 if (module.hot) {
@@ -25,7 +24,7 @@ if (module.hot) {
       <AppContainer>
         <NextRoot store={store} history={history} />
       </AppContainer>,
-      rootElement
+      rootElement,
     )
   })
 }

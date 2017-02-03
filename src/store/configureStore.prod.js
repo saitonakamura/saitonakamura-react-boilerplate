@@ -11,8 +11,8 @@ export default function configureStore() {
     reducers,
     initialState,
     compose(
-      applyMiddleware(thunkMiddleware, routerMiddleware(browserHistory))
-    )
+      applyMiddleware(thunkMiddleware, routerMiddleware(browserHistory)),
+    ),
   )
 
   return store
