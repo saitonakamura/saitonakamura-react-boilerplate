@@ -15,11 +15,11 @@ module.exports = new Config().merge({
     rules: [
       { test: /\.jsx?$/, use: { loader: 'babel-loader' }, include: path.resolve('./src'), },
       { test: /\.(png|jpg)$/, use: { loader: 'file-loader', options: { name: 'images/[name].[hash].[ext]', }, }, },
-      { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, use: { loader: 'file-loader', options: { name: 'fonts/[name].[hash].[ext]&mimetype=application/font-woff', }, }, },
-      { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, use: { loader: 'file-loader', options: { name: 'fonts/[name].[hash].[ext]&mimetype=application/font-woff', }, }, },
-      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, use: { loader: 'file-loader', options: { name: 'fonts/[name].[hash].[ext]&mimetype=application/octet-stream', }, }, },
+      { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, use: { loader: 'file-loader', options: { name: 'fonts/[name].[hash].[ext]', mimetype: 'application/font-woff', }, }, },
+      { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, use: { loader: 'file-loader', options: { name: 'fonts/[name].[hash].[ext]', mimetype: 'application/font-woff', }, }, },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, use: { loader: 'file-loader', options: { name: 'fonts/[name].[hash].[ext]', mimetype: 'application/octet-stream', }, }, },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, use: { loader: 'file-loader', options: { name: 'fonts/[name].[hash].[ext]', }, }, },
-      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, use: { loader: 'file-loader', options: { name: 'images/[name].[hash].[ext]&mimetype=image/svg+xml', }, }, },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, use: { loader: 'file-loader', options: { name: 'images/[name].[hash].[ext]', mimetype: 'image/svg+xml', }, }, },
     ],
   },
   plugins: [

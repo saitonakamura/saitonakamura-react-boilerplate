@@ -18,8 +18,8 @@ module.exports = new Config().extend('conf/webpack.base.config.babel.js').merge(
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: [
+          fallback: 'style-loader',
+          use: [
             { loader: 'css-loader', options: { modules: true, importLoaders: 1, localIdentName: '[name]__[local]___[hash:base64:5]', } },
             { loader: 'postcss-loader', options: { plugins: () => [autoprefixer], }, },
           ],
@@ -35,6 +35,11 @@ module.exports = new Config().extend('conf/webpack.base.config.babel.js').merge(
     new Webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: (module, count) => module.resource && module.resource.indexOf(path.resolve('node_modules')) === 0,
+    }),
+    new Webpack.optimize.CommonsChunkPlugin({
+      name: "runtime",
+      chunks: ['vendor'],
+      minChunks: Infinity,
     }),
     // new BundleAnalyzerPlugin(),
   ],
