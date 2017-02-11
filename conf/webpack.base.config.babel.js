@@ -6,6 +6,7 @@ const Config = require('webpack-config').default
 module.exports = new Config().merge({
   output: {
     path: path.resolve('./build'),
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
