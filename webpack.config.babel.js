@@ -1,3 +1,5 @@
 const Config = require('webpack-config').default
 
-module.exports = new Config().extend('conf/webpack.[NODE_ENV].config.babel.js')
+process.env.NODE_ENV = process.env.NODE_ENV || 'production'
+
+module.exports = new Config().extend(`conf/webpack.${process.env.NODE_ENV}.config.babel.js`)
