@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development node --harmony server.js",
+    "start": "npm run clean && cross-env NODE_ENV=development node --harmony server.js",
     "build": "npm run clean && cross-env NODE_ENV=development webpack",
     "build:prod": "npm run clean && cross-env NODE_ENV=production webpack -p",
     "clean": "rimraf build/*",
