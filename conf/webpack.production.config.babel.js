@@ -2,9 +2,7 @@ const path = require('path')
 const Webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const Config = require('webpack-config').default
-// const packageJson = require('../package.json')
 
 module.exports = new Config().extend('conf/webpack.base.config.babel.js').merge({
   entry: [
@@ -41,7 +39,6 @@ module.exports = new Config().extend('conf/webpack.base.config.babel.js').merge(
       chunks: ['vendor'],
       minChunks: Infinity,
     }),
-    // new BundleAnalyzerPlugin(),
   ],
   devtool: 'source-map',
 })

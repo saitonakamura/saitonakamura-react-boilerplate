@@ -1,5 +1,5 @@
 webpack.*config*.js
-server.js
+devServer.js
 build/**
 *.css
 *.md

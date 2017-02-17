@@ -11,3 +11,4 @@
 * hot module replacement
 * css modules
 * postcss with autoprefixer
+* yarn

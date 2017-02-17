@@ -1,6 +1,5 @@
 const path = require('path')
 const Webpack = require('webpack')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const autoprefixer = require('autoprefixer')
 const Config = require('webpack-config').default
 
@@ -32,7 +31,6 @@ module.exports = new Config().extend('conf/webpack.base.config.babel.js').merge(
     new Webpack.SourceMapDevToolPlugin({
   		filename: '[file].map'
   	}),
-    // new BundleAnalyzerPlugin(),
   ],
   devtool: 'source-map',
 })

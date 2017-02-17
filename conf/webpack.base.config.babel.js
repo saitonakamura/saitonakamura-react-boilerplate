@@ -2,6 +2,7 @@ const path = require('path')
 const Webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Config = require('webpack-config').default
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = new Config().merge({
   output: {
@@ -30,5 +31,7 @@ module.exports = new Config().merge({
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
       }
     }),
+    //new Webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en)$/),
+    // new BundleAnalyzerPlugin(),
   ],
 })
